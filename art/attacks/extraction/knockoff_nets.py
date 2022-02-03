@@ -189,6 +189,7 @@ class KnockoffNets(ExtractionAttack):
     def _adaptive_extraction(
         self, x: np.ndarray, y: np.ndarray, thieved_classifier: "CLASSIFIER_TYPE"
     ) -> "CLASSIFIER_TYPE":
+
         """
         Extract with the adaptive sampling strategy.
 
@@ -198,7 +199,7 @@ class KnockoffNets(ExtractionAttack):
         :param thieved_classifier: A thieved classifier to be stolen.
         :return: The stolen classifier.
         """
-        # Compute number of actions
+        # Compute number of actions 计算共有多少个类别
         if len(y.shape) == 2:
             nb_actions = len(np.unique(np.argmax(y, axis=1)))
         elif len(y.shape) == 1:
